@@ -89,7 +89,6 @@ struct _block *findFreeBlock(struct _block **last, size_t size)
 #endif
 
 #if defined BEST && BEST == 0
-   //printf("TODO: Implement best fit here\n");
    /* Best fit */
    struct _block * winner  = NULL;
 
@@ -117,7 +116,7 @@ struct _block *findFreeBlock(struct _block **last, size_t size)
 
 #if defined WORST && WORST == 0
    /* Worst fit */
-   // MAY NEED WORK /////////////////////////////////////////////
+   // MAY NEED WORK
    struct _block * winner  = NULL;
 
    int spaceRemaining = INT_MIN;
@@ -140,10 +139,7 @@ struct _block *findFreeBlock(struct _block **last, size_t size)
    curr = winner;
 #endif
 
-#if defined NEXT && NEXT == 0
-   //printf("TODO: Implement next fit here\n");
-   //struct _block *last_reuse = NULL;
-   
+#if defined NEXT && NEXT == 0 
    while (curr && !((curr->size >= size) && (curr->free))) 
    {
       *last = curr;
@@ -265,20 +261,16 @@ void *malloc(size_t size)
    /* Could not find free _block, so grow heap */
    if (next == NULL) 
    {
-      //num_mallocs++;
       next = growHeap(last, size);
    }
    else
    {
-      num_reuses++; // April 9th office hours at around 1:08:19
-                    // "Anytime findFreeBlock returns a value that isn't NULL"
-                    // Use here, stated in office hours April 9, 1:09:04 in
+      num_reuses++;
    }
 
    /* Could not find free _block or grow heap, so just return NULL */
    if (next == NULL) 
    {
-      //max_heap = size;
       return NULL;
    }
    
@@ -302,9 +294,6 @@ void *malloc(size_t size)
  */
 void free(void *ptr) 
 {
-   
-   //num_frees++;
-   
    if (ptr == NULL) 
    {
       return;
