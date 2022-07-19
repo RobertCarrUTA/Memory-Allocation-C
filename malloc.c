@@ -9,13 +9,6 @@
 #define ALIGN4(s)         (((((s) - 1) >> 2) << 2) + 4)
 #define BLOCK_DATA(b)      ((b) + 1)
 #define BLOCK_HEADER(ptr)   ((struct _block *)(ptr) - 1)
-
-   // The fits are covered/discussed in the feb 24th recording
-   // starting at around 50:38 into the video
-  
-   // Also look at the start of March 29th lecture
-
-   // Expected outputs discussed on April 9th office hours around 1:12:20
    
 static int atexit_registered = 0;
 static int num_mallocs       = 0;
@@ -173,17 +166,8 @@ struct _block *findFreeBlock(struct _block **last, size_t size)
    }
    
    curr = lastList;
-   
-   //num_requested = size;
-#endif
 
-   /*
-   if(curr!=NULL)
-   {
-      num_reuses++; // April 9th office hours at around 1:08:19
-                    // "Anytime findFreeBlock returns a value that isn't NULL"
-   }
-   */
+#endif
 
    return curr;
 }
@@ -205,8 +189,6 @@ struct _block *growHeap(struct _block *last, size_t size)
    /* Request more space from OS */
    struct _block *curr = (struct _block *)sbrk(0);
    struct _block *prev = (struct _block *)sbrk(sizeof(struct _block) + size);
-   //num_blocks++;
-   //num_blocks++;
 
    assert(curr == prev);
 
