@@ -13,7 +13,8 @@ For this program, I implemented my own algorithms for First Fit, Next Fit, Best 
 
 ## Compile Instructions
 These compile instructions are for a Ubuntu Operating System
- *Compile Instructions will be added soon*
+
+*Compile Instructions will be added soon*
  
  ## Meanings of the Allocations
 * **Best Fit**: Processes are allocated to the smallest unallocated block of memory in which they can fit, when the allocator is trying to determine which allocation is best.
