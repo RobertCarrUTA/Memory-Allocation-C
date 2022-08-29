@@ -12,9 +12,27 @@ For this program, I implemented my own algorithms for First Fit, Next Fit, Best 
 
 
 ## Compile Instructions
-These compile instructions are for a Ubuntu Operating System
+***These compile instructions are for a Ubuntu Operating System***
+* Download the source code onto a Linux operating system
+* Navigate to the folder where the source code has been downloaded
 
-*Compile Instructions will be added soon*
+
+After this, to compile the program:
+* It may be good to use **make clean** before using the next command in this list
+* Enter **make** into the terminal
+
+
+To test the following implementations:
+* First Fit
+  * **env LD_PRELOAD=lib/libmalloc-ff.so tests/ffnf**
+* Next Fit
+  * **env LD_PRELOAD=lib/libmalloc-nf.so tests/ffnf**
+* Best Fit
+  * **env LD_PRELOAD=lib/libmalloc-bf.so tests/ffnf**
+* Worst Fit
+  * **env LD_PRELOAD=lib/libmalloc-wf.so tests/ffnf**
+
+*More Compile Instructions will be added soon*
  
  ## Meanings of the Allocations
 * **Best Fit**: Processes are allocated to the smallest unallocated block of memory in which they can fit, when the allocator is trying to determine which allocation is best.
@@ -24,5 +42,5 @@ These compile instructions are for a Ubuntu Operating System
 * **realloc**: Attempts to resize the memory block pointed to by ptr that was previously allocated by malloc or calloc.
 * **malloc**: This function attempts to allocate and return a pointer to the memory requested.
 * **calloc**: Provides space for an array of nmemb objects, each with a size of size. All bits in the space are set to zero at the beginning.
-* **free**: Attempts to deallocate previously allocated memory from a Calloc, malloc, or realloc.
+* **free**: Attempts to deallocate previously allocated memory from a calloc, malloc, or realloc.
 * **growHeap**: Attempts to use sbrk() to dynamically increase the data segment of the calling process based on the requested memory size.
