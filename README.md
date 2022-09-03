@@ -1,4 +1,3 @@
-*README.md is still under construction*
 # Memory Allocation in C
 
 ## Table of Contents
