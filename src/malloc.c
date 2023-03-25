@@ -1,10 +1,10 @@
-#include <assert.h>  // The assert.h header defines the assert macro which is used as a debugging aid to check program assumptions
-#include <stdio.h>   // The stdio.h header defines the standard input/output library functions
-#include <stdbool.h> // The stdbool.h header defines the bool data type and its values
-#include <unistd.h>  // The unistd.h header defines miscellaneous symbolic constants and types, and declares miscellaneous functions
-#include <stdlib.h>  // The stdlib.h header defines four variable types, several macros, and various functions for performing general functions
-#include <limits.h>  // The limits.h header defines various constants that represent the limits of fundamental integral types
-#include <string.h>  // The string.h header declares several functions for manipulating C strings and arrays
+#include <assert.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <string.h>
 
 #define ALIGN4(s)           (((((s) - 1) >> 2) << 2) + 4) // Macro definition that aligns the given value s to 4 bytes
 #define BLOCK_DATA(b)       ((b) + 1)                     // Macro definition to get the data portion of a block based on the block pointer
